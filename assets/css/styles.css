@@ -1,0 +1,234 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(248, 227, 200) !important;
+}
+
+section#header {
+    background-color: antiquewhite;
+}
+
+section#header header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5vw 0;
+}
+
+section#header header h1 {
+    font-size: 2.5rem;
+}
+
+section#header header form {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: rgb(248, 227, 200);
+    padding: 3vw;
+    border-radius: 30px;
+}
+
+section#header header form textarea {
+    width: 25vw;
+    height: 5vw;
+    max-width: 25vw;
+    padding: 5px;
+}
+
+section#header header form span {
+    display: none;
+    color: red;
+    font-size: .92rem;
+}
+
+section#header header form button {
+    background-color: rgb(210, 210, 210);
+    border: 1px solid black;
+}
+
+section#header header form button:hover {
+    background-color: rgb(178, 178, 178);
+}
+
+section#main main {
+    padding: 5vw 15vw;
+}
+
+.todo-list-manipulation {
+    display: flex;
+    justify-content: flex-end;
+}
+
+section#main main form .button-group, .filter-wrapper {
+    padding: 30px;
+    padding-bottom: 50px;
+    display: flex;
+}
+
+.filter-wrapper {
+    width: 20%;
+    justify-content: flex-start;
+}
+
+section#main main form .button-group {
+    width: 80%;
+    gap: 10px;
+    justify-content: flex-end;
+}
+section#main main form .button-group button:first-child,
+section#main main form .button-group button:nth-child(2) {
+    opacity: .4;
+}
+
+section#main main form ol {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.3rem;
+    row-gap: 1.5em;
+}
+
+section#main main form ol span {
+    width: 100%;
+    display: flex;
+    background-color: rgb(253, 240, 224);
+    padding: 15px 5px 15px 20px;
+    border-radius: 10px;
+}
+
+section#main main form ol span li {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3px;
+}
+
+section#main main form ol span li .todo-checkbox-delete {
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    text-justify: center;
+    display: flex;
+    align-items: center;
+}
+
+section#main main form ol span li .todo-checkbox-delete input {
+    width: 50%;
+    height: 1.5rem;
+}
+
+section#main main form ol span li .todo-checkbox-delete i {
+    width: 50%;
+    height: 1.5rem;
+}
+
+.save-changes-pop-up, .clear-todos-pop-up {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    margin: auto;
+    width: 5vw;
+    height: 8vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    overflow: hidden;
+    z-index: 999;
+    font-size: 1.3rem;
+    border-radius: 20px;
+    border: 7px solid rgb(219, 219, 219);
+}
+
+.hide-popup {
+    display: none;
+}
+
+@keyframes pop-up-expand {
+    0% {
+        width: 5vw;
+        height: 8vw;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        width: 50vw;
+        height: 20vw;
+        opacity: 1;
+    }
+}
+
+@keyframes pop-up-remove {
+    0% {
+        width: 50vw;
+        height: 20vw;
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        width: 7vw;
+        height: 10vw;
+        opacity: 0;
+    }
+}
+
+.popup-button-group {
+    display: flex;
+    gap: 15px;
+}
+
+.popup-button-group button {
+    padding: 7px;
+    font-weight: bold;
+    letter-spacing: .8px;
+}
+
+.popup-button-group button:first-child {
+    background-color: rgb(84, 149, 84);
+    border-radius: 3px;
+    border-width: 1px;
+    color: white;
+}
+.popup-button-group button:first-child:hover {
+    background-color: rgb(76, 137, 76);
+}
+
+.popup-button-group button:last-child {
+    background-color: rgb(255, 64, 64);
+    border-radius: 3px;
+    border-width: 1px;
+    color: white;
+}
+.popup-button-group button:last-child:hover {
+    background-color: rgb(234, 58, 58);
+}
+
+.pop-up-hide-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+    display: none;
+}
