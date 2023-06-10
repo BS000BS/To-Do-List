@@ -5,10 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/font-awesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <title>To-Do List</title>
 </head>
 <body>
+    <section id="header">
+        <header>
+            <h1>To-Do List</h1>
+            <form action="#" id="to-do-form">
+                <label for="to-do">Add a to-do:</label>
+                <textarea id="to-do" name="to-do" title="To-do must not be empty, and it must be less than 100 characters."></textarea>
+                <span id="validation-message">Please don't leave it empty, write something!</span>
+                <button type="submit" class="btn">Add</button>
+            </form>
+        </header>
+    </section>
+    <section id="main">
+        <main>
+            <form id="todo-list-form">
+                <div class="todo-list-manipulation">
+                    <div class="filter-wrapper">
+                        <div class="dropdown">
+                            <button id="filter" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Filter
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" id="done">Show only those which are done</a></li>
+                              <li><a class="dropdown-item" id="undone">Show only those which are un-done</a></li>
+                              <li><a class="dropdown-item" id="undone-done-both">Show all to-dos</a></li>
+                            </ul>
+                          </div>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" disabled id="save-changes" class="btn btn-success" >Save changes</button>
+                        <button type="button" disabled id="revert-changes" class="btn btn-warning">Revert changes</button>
+                        <button type="button" id="clear-list" class="btn btn-danger">Clear list</button>
+                    </div>
+                </div>
+                <ol id="todo-list">
+                
+                </ol>
+            </form>
+        </main>
+    </section>
     
+    <div id="save-changes-pop-up" class="save-changes-pop-up hide-popup">
+        <p>Are you sure you want to save changes?</p>
+        <div class="popup-button-group">
+            <button id="confirm" >Yes</button>
+            <button id="reject" >No</button>
+        </div>
+    </div>
+
+    <div id="clear-todos-pop-up" class="clear-todos-pop-up hide-popup">
+        <p>Are you sure you want to delete all your to-dos?</p>
+        <div class="popup-button-group">
+            <button id="confirm-clear-todos" >Yes</button>
+            <button id="reject-clear-todos" >No</button>
+        </div>
+    </div>
+    
+    <div class="pop-up-hide-background"></div>
+
     <script src="./assets/js/script.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
